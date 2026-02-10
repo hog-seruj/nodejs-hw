@@ -11,6 +11,7 @@ import { errorHandler } from './middleware/errorHandler.js';
 // Routers
 import notesRouters from './routes/notesRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT ?? 3000;
@@ -25,6 +26,9 @@ app.use(authRoutes);
 
 // Notes routers
 app.use(notesRouters);
+
+// User routers
+app.use(userRoutes);
 
 // Middleware 404
 app.use(notFoundHandler);
